@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { useAuth } from "../context/AuthProvider";
+import { API_URL } from "../config"; // ← Import backend URL
 
 function Login() {
   const [_, setAuthUser] = useAuth();
@@ -12,7 +13,7 @@ function Login() {
 
   const onSubmit = async (data) => {
     try {
-      const res = await axios.post("http://localhost:4001/user/login", { email: data.email, password: data.password });
+      const res = await axios.post(`${API_URL}/user/login`, { email: data.email, password: data.password }); // ← backend URL updated
       if (res.data) {
         setAuthUser(res.data.user);
         localStorage.setItem("Users", JSON.stringify(res.data.user));

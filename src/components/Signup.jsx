@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import toast from "react-hot-toast";
 import Login from "./Login";
+import { API_URL } from "../config"; // ← Import backend URL
 
 function Signup() {
   const location = useLocation();
@@ -24,7 +25,7 @@ function Signup() {
     };
 
     try {
-      const res = await axios.post("http://localhost:4001/user/signup", userInfo);
+      const res = await axios.post(`${API_URL}/user/signup`, userInfo); // ← backend URL updated
       if (res.data) {
         toast.success("Signup Successfully");
         localStorage.setItem("Users", JSON.stringify(res.data.user));
@@ -41,7 +42,6 @@ function Signup() {
   return (
     <div className="flex h-screen items-center justify-center bg-gray-100">
       <div className="w-full max-w-md p-6 bg-white rounded-lg shadow-lg relative">
-        {/* Cross Button */}
         <Link
           to="/"
           className="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-xl font-bold"
@@ -94,7 +94,6 @@ function Signup() {
             )}
           </div>
 
-          {/* Signup Button */}
           <button
             type="submit"
             className="w-full bg-pink-500 text-white py-2 rounded-md hover:bg-pink-700 transition duration-200"
@@ -103,7 +102,6 @@ function Signup() {
           </button>
         </form>
 
-        {/* Login Link */}
         <p className="mt-4 text-center text-gray-600">
           Already have an account?{" "}
           <button

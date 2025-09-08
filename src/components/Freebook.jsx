@@ -5,15 +5,16 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
 import axios from "axios";
-
 import Cards from "./Cards";
+import { API_URL } from "../config"; // ← Import backend URL
+
 function Freebook() {
   const [book, setBook] = useState([]);
+
   useEffect(() => {
     const getBook = async () => {
       try {
-        const res = await axios.get("http://localhost:4001/book");
-
+        const res = await axios.get(`${API_URL}/book`); // ← backend URL updated
         const data = res.data.filter((data) => data.category === "Free");
         console.log(data);
         setBook(data);
@@ -58,9 +59,10 @@ function Freebook() {
       },
     ],
   };
+
   return (
     <>
-      <div className=" max-w-screen-2xl container mx-auto md:px-20 px-4">
+      <div className="max-w-screen-2xl container mx-auto md:px-20 px-4">
         <div>
           <h1 className="font-semibold text-xl pb-2">Free Offered Courses</h1>
           <p>
@@ -81,4 +83,5 @@ function Freebook() {
     </>
   );
 }
+
 export default Freebook;
