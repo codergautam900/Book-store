@@ -1,66 +1,23 @@
 {
-<<<<<<< HEAD
-  "name": "fronted",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "axios": "^1.11.0",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1",
-    "react-hook-form": "^7.62.0",
-    "react-hot-toast": "^2.6.0",
-    "react-router-dom": "^7.8.2",
-    "react-slick": "^0.31.0",
-    "slick-carousel": "^1.8.1"
-  },
-  "devDependencies": {
-    "@eslint/js": "^9.33.0",
-    "@types/react": "^19.1.10",
-    "@types/react-dom": "^19.1.7",
-    "@vitejs/plugin-react": "^5.0.0",
-    "autoprefixer": "^10.4.21",
-    "daisyui": "^5.0.54",
-    "eslint": "^9.33.0",
-    "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-react-refresh": "^0.4.20",
-    "globals": "^16.3.0",
-    "postcss": "^8.5.6",
-    "tailwindcss": "^3.4.17",
-    "vite": "^7.1.2"
-=======
-  "name": "bookstore",
+  "name": "bookstore-backend",
   "version": "1.0.0",
-  "description": "mern stack project",
-  "homepage": "https://github.com/codergautam900/online-bookstore#readme",
-  "bugs": {
-    "url": "https://github.com/codergautam900/online-bookstore/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/codergautam900/online-bookstore.git"
-  },
-  "license": "ISC",
-  "author": "Gautam sagar",
-  "main": " index.js",
+  "description": "MERN stack backend project",
+  "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": " nodemon index.js"
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "author": "Gautam Sagar",
+  "license": "ISC",
   "dependencies": {
     "bcryptjs": "^3.0.2",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^5.1.0",
-    "mongoose": "^8.18.0",
+    "mongoose": "^8.18.0"
+  },
+  "devDependencies": {
     "nodemon": "^3.1.10"
->>>>>>> 9d2fbd2 (Backend completed)
   }
 }
